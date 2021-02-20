@@ -9,16 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>E-Library Admin - Dashboard</title>
+    <title>E-Library Admin - Borrow</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -203,9 +206,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
@@ -407,196 +412,65 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm"><i class="fas fa-book-open fa-sm text-white-50 mr-1"></i> Pinjam Buku</a>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Dipinjam</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">50 Buku</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-book-reader fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <h1 class="h3 mb-2 text-gray-800">Daftar Pinjaman</h1>
+                    <p class="mb-4">Pinjaman buku yang ada di SMAN 2 Banjar</p>
+                    <button class="btn btn-primary btn-sm mb-3 mr-2" data-toggle="modal" data-target="#pinjamBuku"><i class="fas fa-book mr-1"></i> Pinjam Buku</button>
+                    
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Daftar Pinjaman</h6>
                         </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Buku</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">750 Buku</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-book-reader fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Peminjaman</th>
+                                            <th>Nama Lengkap</th>
+                                            <th>Kelas</th>
+                                            <th>No HP</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>00001</td>
+                                            <td>Abu Janda</td>
+                                            <td>XII IPA 2</td>
+                                            <td>+6282455144566</td>
+                                            <td><span class="badge badge-warning">Sedang meminjam</span></td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-primary btn-sm">detail</a>
+                                                <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>00002</td>
+                                            <td>Abu Jahal</td>
+                                            <td>XII IPA 3</td>
+                                            <td>+6282455144566</td>
+                                            <td><span class="badge badge-danger">Belum dikembalikan</span></td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-primary btn-sm">detail</a>
+                                                <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>00003</td>
+                                            <td>Abu Hasan</td>
+                                            <td>XII IPA 4</td>
+                                            <td>+6282455144566</td>
+                                            <td><span class="badge badge-success">Sudah dikembalikan</span></td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-primary btn-sm">detail</a>
+                                                <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Denda yang belum dibayar</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp215.000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-wallet fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Buku yang dipinjam
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">37,5%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 37.5%" aria-valuenow="37.5" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Statistik Peminjaman</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Kategori Buku</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Motivasi
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Bisnis
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Technology
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <div class="col-lg-12 mb-4">
-
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Pesan buat kamu!</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="">
-                                    </div>
-                                    <p>Hey kamu, rajin rajin membaca ya supaya cerdas pintar :) dan gunakan pengetahuanmu untuk beribadah kepada Allah Ta'ala</p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
@@ -647,6 +521,166 @@
         </div>
     </div>
 
+    <!-- Modal Borrow -->
+    <div class="modal fade" id="pinjamBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Form Pinjam Buku</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label class="col-form-label">Tanggal Peminjaman:</label>
+                  <input type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Nama Peminjam:</label>
+                  <input type="text" class="form-control" placeholder="Contoh: Abu Jahal">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Judul Buku:</label>
+                  <input type="text" class="form-control" placeholder="Contoh: Pajak Penghasilan I">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Modal Details -->
+    <div class="modal fade" id="detailPinjam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">ID Pinjaman: 00001</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Nama:</label>
+                        <input type="text" class="form-control" value="Abu Jahal">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>NIS:</label>
+                        <input type="text" class="form-control" value="665845926">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Kelas:</label>
+                        <input type="text" class="form-control" value="XII IPA 2">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>No HP:</label>
+                        <input type="text" class="form-control" value="08211155545">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Email</label>
+                            <input type="email" class="form-control" value="abujahal@jahannam.com">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Total Buku Dipinjam</label>
+                            <input type="text" class="form-control" value="4 Buku">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Jumlah Buku Dikembalikan</label>
+                            <input type="text" class="form-control" value="3 Buku">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Jumlah Buku Dipinjam</label>
+                            <input type="text" class="form-control" value="1 Buku">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Judul Buku</th>
+                                        <th>Tanggal Pinjam</th>
+                                        <th>Tanggal Seharusnya Kembali</th>
+                                        <th>Tanggal Kembali</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Pengantar Akuntansi</td>
+                                        <td>01 Februari 2021</td>
+                                        <td>07 Februari 2021</td>
+                                        <td> - </td>
+                                        <td><span class="badge badge-warning">Sedang meminjam</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-success btn-sm">kembali</a>
+                                            <a href="#" class="btn btn-secondary btn-sm disabled">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Islamic Parenting</td>
+                                        <td>03 Februari 2021</td>
+                                        <td>10 Februari 2021</td>
+                                        <td>09 Februari 2021</td>
+                                        <td><span class="badge badge-success">Sudah Dikembalikan</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-secondary btn-sm disabled">kembali</a>
+                                            <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bootstrap 4</td>
+                                        <td>13 Februari 2021</td>
+                                        <td>20 Februari 2021</td>
+                                        <td>22 Februari 2021</td>
+                                        <td><span class="badge badge-danger">Denda Rp10.000</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-secondary btn-sm disabled">kembali</a>
+                                            <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>CodeIgniter 4</td>
+                                        <td>15 Februari 2021</td>
+                                        <td>25 Februari 2021</td>
+                                        <td>01 Maret 2021</td>
+                                        <td><span class="badge badge-danger">Denda Rp15.000</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-secondary btn-sm disabled">kembali</a>
+                                            <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -658,11 +692,11 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
