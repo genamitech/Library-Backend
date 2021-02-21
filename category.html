@@ -414,7 +414,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Daftar Kategori</h1>
                     <p class="mb-4">Ini adalah daftar kategori buku yang ada di Perpustakaan SMAN 2 Banjar.</p>
-                    <button class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#tambahPenerbit"><i class="fas fa-tags"></i> Tambah Kategori</button>
+                    <button class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#tambahKategori"><i class="fas fa-tags"></i> Tambah Kategori</button>
                     
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -436,8 +436,7 @@
                                             <td>0001</td>
                                             <td>Motivasi</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-sm">detail</a>
-                                                <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                                <a href="#" data-toggle="modal" data-target="#editKategori" class="btn btn-warning btn-sm">ubah</a>
                                                 <a href="#" class="btn btn-danger btn-sm">hapus</a>
                                             </td>
                                         </tr>
@@ -445,8 +444,7 @@
                                             <td>0002</td>
                                             <td>Bisnis</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-sm">detail</a>
-                                                <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                                <a href="#" data-toggle="modal" data-target="#editKategori" class="btn btn-warning btn-sm">ubah</a>
                                                 <a href="#" class="btn btn-danger btn-sm">hapus</a>
                                             </td>
                                         </tr>
@@ -503,8 +501,8 @@
         </div>
     </div>
 
-    <!-- Modal Penerbit -->
-    <div class="modal fade" id="tambahPenerbit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Kategori -->
+    <div class="modal fade" id="tambahKategori" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -516,15 +514,8 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label class="col-form-label">Nama Penerbit:</label>
-                  <input type="text" class="form-control" placeholder="Nama penerbit...">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Email:</label>
-                  <input type="text" class="form-control" placeholder="abujahal@jahannam.com">
-                <div class="form-group">
-                  <label class="col-form-label">No. Telp:</label>
-                  <input type="number" class="form-control" placeholder="Contoh: +62821-2222-3333">
+                  <label class="col-form-label">Nama Kategori:</label>
+                  <input type="text" class="form-control" placeholder="Nama kategori...">
                 </div>
               </form>
             </div>
@@ -535,6 +526,32 @@
           </div>
         </div>
       </div>
+      
+    <!-- Modal Kategori -->
+      <div class="modal fade" id="editKategori" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Form Edit Kategori</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label class="col-form-label">Nama Kategori:</label>
+                    <input type="text" class="form-control" value="Self Improvement">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

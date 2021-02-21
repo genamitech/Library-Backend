@@ -432,7 +432,7 @@
                                             <th>Pengarang</th>
                                             <th>Penerbit</th>
                                             <th>Kategori</th>
-                                            <th>Stock</th>
+                                            <th>Lokasi</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -443,10 +443,10 @@
                                             <td>Hernowo</td>
                                             <td>Kaifa Learning</td>
                                             <td>Self Improvement</td>
-                                            <td>3</td>
+                                            <td>R01B3</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-sm">detail</a>
-                                                <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                                <a href="#" data-toggle="modal" data-target="#detailBuku" class="btn btn-primary btn-sm">detail</a>
+                                                <a href="#" data-toggle="modal" data-target="#editBuku" class="btn btn-warning btn-sm">ubah</a>
                                                 <a href="#" class="btn btn-danger btn-sm">hapus</a>
                                             </td>
                                         </tr>
@@ -455,7 +455,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -560,6 +559,103 @@
           </div>
         </div>
     </div>
+    
+    <!-- Modal Edit Books -->
+    <div class="modal fade" id="editBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Form Edit Buku 0001</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label class="col-form-label">Judul Buku:</label>
+                  <input type="text" class="form-control" value="Quantum Reading">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Pengarang:</label>
+                  <input type="text" class="form-control" value="Abu Jahal">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Penerbit</label>
+                    <select class="form-control">
+                        <option value="Kaifa Learning" selected>Kaifa Learning</option>
+                        <option value="Erlangga">Erlangga</option>
+                        <option value="Pustaka Imam Syafi'i">Pustaka Imam Syafi'i</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Deskripsi</label>
+                    <textarea cols="30" rows="3" class="form-control">Jadi ini adalah buku karya Lerian Febriana, aseek!</textarea>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Kategori</label>
+                    <select class="form-control">
+                        <option value="Self Improvement"selected>Self Improvement</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Stok:</label>
+                  <input type="number" class="form-control" value="3">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Lokasi Buku:</label>
+                  <input type="text" class="form-control" value="R01B3">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Harga:</label>
+                  <input type="text" class="form-control" value="Rp32.000">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Modal Detail Books -->
+    <div class="modal fade" id="detailBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Detail Buku 0001</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label class="col-form-label">Total Stok:</label>
+                        <input type="number" class="form-control" value="3">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-form-label">Jumlah Buku Dipinjam:</label>
+                        <input type="number" class="form-control" value="2">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="col-form-label">Sisa Stok:</label>
+                        <input type="number" class="form-control" value="1">
+                    </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
     <!-- Modal Penerbit -->
     <div class="modal fade" id="tambahPenerbit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -594,12 +690,6 @@
         </div>
     </div>
 
-
-    
-
-    
-
-      
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
