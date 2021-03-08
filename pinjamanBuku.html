@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>E-Library Admin - Siswa</title>
+    <title>E-Library Admin - Borrow</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -68,8 +68,8 @@
                     <div id="collapsePinjam" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Menu Pinjam:</h6>
-                            <a class="collapse-item" href="borrow.html">Daftar Pinjaman</a>
-                            <a class="collapse-item" href="borrowBooks.html">Daftar Buku Dipinjam</a>
+                            <a class="collapse-item" href="pinjamanBuku.html">Form Pinjaman Buku</a>
+                            <a class="collapse-item" href="pengembalianBuku.html">Form Pengembalian Buku</a>
                         </div>
                     </div>
                 </li>
@@ -89,7 +89,7 @@
                 <div id="collapseBuku" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Buku:</h6>
-                        <a class="collapse-item" href="books.html">Daftar Buku</a>
+                        <a class="collapse-item" href="buku.html">Daftar Buku</a>
                     </div>
                 </div>
             </li>
@@ -103,7 +103,7 @@
                 <div id="collapseSiswa" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu siswa:</h6>
-                        <a class="collapse-item" href="student.html">Daftar Siswa</a>
+                        <a class="collapse-item" href="pesertaDidik.html">Daftar Siswa</a>
                     </div>
                 </div>
             </li>
@@ -117,7 +117,7 @@
                 <div id="collapsePenerbit" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Penerbit:</h6>
-                        <a class="collapse-item" href="publisher.html">Daftar Penerbit</a>
+                        <a class="collapse-item" href="penerbit.html">Daftar Penerbit</a>
                     </div>
                 </div>
             </li>
@@ -131,7 +131,7 @@
                 <div id="collapseKategori" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Kategori:</h6>
-                        <a class="collapse-item" href="category.html">Daftar Kategori</a>
+                        <a class="collapse-item" href="kategori.html">Daftar Kategori</a>
                     </div>
                 </div>
             </li>
@@ -278,47 +278,55 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Daftar Siswa</h1>
-                    <p class="mb-4">Ini adalah daftar siswa/i yang ada di SMAN 2 Banjar.</p>
-                    <button class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#tambahSiswa"><i class="fas fa-user-plus mr-1"></i> Tambah</button>
+                    <h1 class="h3 mb-2 text-gray-800">Daftar Pinjaman</h1>
+                    <p class="mb-4">Pinjaman buku yang ada di SMAN 2 Banjar</p>
+                    <button class="btn btn-primary btn-sm mb-3 mr-2" data-toggle="modal" data-target="#pinjamBuku"><i class="fas fa-book mr-1"></i> Pinjam Buku</button>
                     
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Daftar Siswa</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Daftar Pinjaman</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>NIS</th>
+                                            <th>No</th>
                                             <th>Nama Lengkap</th>
                                             <th>Kelas</th>
                                             <th>No HP</th>
-                                            <th>E-mail</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1556484564</td>
-                                            <td>Abu Jahal</td>
+                                            <td>1</td>
+                                            <td>Abu Janda</td>
                                             <td>XII IPA 2</td>
-                                            <td>+6281285457986</td>
-                                            <td>abujahal@jahannam.com</td>
+                                            <td>+6282455144566</td>
                                             <td>
-                                                <a href="#" data-toggle="modal" data-target="#editSiswa" class="btn btn-warning btn-sm">ubah</a>
+                                                <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-primary btn-sm">detail</a>
                                                 <a href="#" class="btn btn-danger btn-sm">hapus</a>
                                             </td>
-                                        </tr><tr>
-                                            <td>56613232423</td>
-                                            <td>Abu Janda</td>
-                                            <td>XII IPS 1</td>
-                                            <td>+628125453486</td>
-                                            <td>abujanda@lieur.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Abu Jahal</td>
+                                            <td>XII IPA 3</td>
+                                            <td>+6282455144566</td>
                                             <td>
-                                                <a href="#" data-toggle="modal" data-target="#editSiswa" class="btn btn-warning btn-sm">ubah</a>
+                                                <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-primary btn-sm">detail</a>
+                                                <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Abu Hasan</td>
+                                            <td>XII IPA 4</td>
+                                            <td>+6282455144566</td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-primary btn-sm">detail</a>
                                                 <a href="#" class="btn btn-danger btn-sm">hapus</a>
                                             </td>
                                         </tr>
@@ -375,12 +383,12 @@
         </div>
     </div>
 
-    <!-- Modal Student -->
-    <div class="modal fade" id="tambahSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Borrow -->
+    <div class="modal fade" id="pinjamBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Form tambah siswa/i</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Form Pinjam Buku</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -388,28 +396,16 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label class="col-form-label">NIS:</label>
-                  <input type="number" class="form-control" placeholder="1234567890">
+                  <label class="col-form-label">Tanggal Peminjaman:</label>
+                  <input type="date" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label class="col-form-label">Nama Lengkap:</label>
+                  <label class="col-form-label">Nama Peminjam:</label>
                   <input type="text" class="form-control" placeholder="Contoh: Abu Jahal">
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label">Kelas</label>
-                    <select class="form-control">
-                        <option selected>Pilih</option>
-                        <option value="XII IPA 2">XII IPA 2</option>
-                        <option value="XII IPA 3">XII IPA 3</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">No HP:</label>
-                  <input type="number" class="form-control" placeholder="Contoh: +62812 2222 4444">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Email:</label>
-                  <input type="email" class="form-control" placeholder="Contoh: abujahal@jahannam.com">
+                  <label class="col-form-label">Judul Buku:</label>
+                  <input type="text" class="form-control" placeholder="Contoh: Pajak Penghasilan I">
                 </div>
               </form>
             </div>
@@ -419,44 +415,125 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
-    <!-- Modal Edit Student -->
-    <div class="modal fade" id="editSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <!-- Modal Details -->
+    <div class="modal fade" id="detailPinjam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Form Edit Siswa/i 1556484564</h5>
+              <h5 class="modal-title" id="exampleModalLabel">ID Pinjaman: 00001</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label class="col-form-label">NIS:</label>
-                  <input type="number" class="form-control" value="1234567890">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Nama Lengkap:</label>
-                  <input type="text" class="form-control" value="Abu Jahal">
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Kelas</label>
-                    <select class="form-control">
-                        <option value="XII IPA 2"selected>XII IPA 2</option>
-                        <option value="XII IPA 3">XII IPA 3</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">No HP:</label>
-                  <input type="number" class="form-control" value="081222224444">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Email:</label>
-                  <input type="email" class="form-control" value="abujahal@jahannam.com">
-                </div>
-              </form>
+                <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Nama:</label>
+                        <input type="text" class="form-control" value="Abu Jahal">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>NIS:</label>
+                        <input type="text" class="form-control" value="665845926">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Kelas:</label>
+                        <input type="text" class="form-control" value="XII IPA 2">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>No HP:</label>
+                        <input type="text" class="form-control" value="08211155545">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Email</label>
+                            <input type="email" class="form-control" value="abujahal@jahannam.com">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Total Buku Dipinjam</label>
+                            <input type="text" class="form-control" value="4 Buku">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Jumlah Buku Dikembalikan</label>
+                            <input type="text" class="form-control" value="3 Buku">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Jumlah Buku Dipinjam</label>
+                            <input type="text" class="form-control" value="1 Buku">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Judul Buku</th>
+                                        <th>Tanggal Pinjam</th>
+                                        <th>Tanggal Seharusnya Kembali</th>
+                                        <th>Tanggal Kembali</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Pengantar Akuntansi</td>
+                                        <td>01 Februari 2021</td>
+                                        <td>07 Februari 2021</td>
+                                        <td> - </td>
+                                        <td><span class="badge badge-warning">Sedang meminjam</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-success btn-sm">kembali</a>
+                                            <a href="#" class="btn btn-secondary btn-sm disabled">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Islamic Parenting</td>
+                                        <td>03 Februari 2021</td>
+                                        <td>10 Februari 2021</td>
+                                        <td>09 Februari 2021</td>
+                                        <td><span class="badge badge-success">Sudah Dikembalikan</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-secondary btn-sm disabled">kembali</a>
+                                            <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bootstrap 4</td>
+                                        <td>13 Februari 2021</td>
+                                        <td>20 Februari 2021</td>
+                                        <td>22 Februari 2021</td>
+                                        <td><span class="badge badge-danger">Denda Rp10.000</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-secondary btn-sm disabled">kembali</a>
+                                            <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>CodeIgniter 4</td>
+                                        <td>15 Februari 2021</td>
+                                        <td>25 Februari 2021</td>
+                                        <td>01 Maret 2021</td>
+                                        <td><span class="badge badge-danger">Denda Rp15.000</span></td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-secondary btn-sm disabled">kembali</a>
+                                            <a href="#" class="btn btn-warning btn-sm">ubah</a>
+                                            <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -464,7 +541,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

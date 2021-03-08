@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>E-Library Admin - Books</title>
+    <title>E-Library Admin - Siswa</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -68,8 +68,8 @@
                     <div id="collapsePinjam" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Menu Pinjam:</h6>
-                            <a class="collapse-item" href="borrow.html">Daftar Pinjaman</a>
-                            <a class="collapse-item" href="borrowBooks.html">Daftar Buku Dipinjam</a>
+                            <a class="collapse-item" href="pinjamanBuku.html">Form Pinjaman Buku</a>
+                            <a class="collapse-item" href="pengembalianBuku.html">Form Pengembalian Buku</a>
                         </div>
                     </div>
                 </li>
@@ -89,7 +89,7 @@
                 <div id="collapseBuku" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Buku:</h6>
-                        <a class="collapse-item" href="books.html">Daftar Buku</a>
+                        <a class="collapse-item" href="buku.html">Daftar Buku</a>
                     </div>
                 </div>
             </li>
@@ -103,7 +103,7 @@
                 <div id="collapseSiswa" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu siswa:</h6>
-                        <a class="collapse-item" href="student.html">Daftar Siswa</a>
+                        <a class="collapse-item" href="pesertaDidik.html">Daftar Siswa</a>
                     </div>
                 </div>
             </li>
@@ -117,7 +117,7 @@
                 <div id="collapsePenerbit" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Penerbit:</h6>
-                        <a class="collapse-item" href="publisher.html">Daftar Penerbit</a>
+                        <a class="collapse-item" href="penerbit.html">Daftar Penerbit</a>
                     </div>
                 </div>
             </li>
@@ -131,7 +131,7 @@
                 <div id="collapseKategori" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menu Kategori:</h6>
-                        <a class="collapse-item" href="category.html">Daftar Kategori</a>
+                        <a class="collapse-item" href="kategori.html">Daftar Kategori</a>
                     </div>
                 </div>
             </li>
@@ -278,10 +278,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Daftar Buku</h1>
-                    <p class="mb-4">Koleksi buku-buku yang ada di SMAN 2 Banjar</p>
-                    <button class="btn btn-primary btn-sm mb-3 mr-2" data-toggle="modal" data-target="#tambahBuku"><i class="fas fa-book mr-1"></i> Tambah Buku</button>
-                    <button class="btn btn-secondary btn-sm mb-3 mr-2" data-toggle="modal" data-target="#tambahPenerbit"><i class="fas fa-feather-alt mr-1"></i> Tambah Penerbit</button>
+                    <h1 class="h3 mb-2 text-gray-800">Daftar Siswa</h1>
+                    <p class="mb-4">Ini adalah daftar siswa/i yang ada di SMAN 2 Banjar.</p>
+                    <button class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#tambahSiswa"><i class="fas fa-user-plus mr-1"></i> Tambah</button>
                     
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -293,26 +292,33 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID Buku</th>
-                                            <th>Judul Buku</th>
-                                            <th>Pengarang</th>
-                                            <th>Penerbit</th>
-                                            <th>Kategori</th>
-                                            <th>Lokasi</th>
+                                            <th>NIS</th>
+                                            <th>Nama Lengkap</th>
+                                            <th>Kelas</th>
+                                            <th>No HP</th>
+                                            <th>E-mail</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>00001</td>
-                                            <td>Quantum Reading</td>
-                                            <td>Hernowo</td>
-                                            <td>Kaifa Learning</td>
-                                            <td>Self Improvement</td>
-                                            <td>R01B3</td>
+                                            <td>1556484564</td>
+                                            <td>Abu Jahal</td>
+                                            <td>XII IPA 2</td>
+                                            <td>+6281285457986</td>
+                                            <td>abujahal@jahannam.com</td>
                                             <td>
-                                                <a href="#" data-toggle="modal" data-target="#detailBuku" class="btn btn-primary btn-sm">detail</a>
-                                                <a href="#" data-toggle="modal" data-target="#editBuku" class="btn btn-warning btn-sm">ubah</a>
+                                                <a href="#" data-toggle="modal" data-target="#editSiswa" class="btn btn-warning btn-sm">ubah</a>
+                                                <a href="#" class="btn btn-danger btn-sm">hapus</a>
+                                            </td>
+                                        </tr><tr>
+                                            <td>56613232423</td>
+                                            <td>Abu Janda</td>
+                                            <td>XII IPS 1</td>
+                                            <td>+628125453486</td>
+                                            <td>abujanda@lieur.com</td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#editSiswa" class="btn btn-warning btn-sm">ubah</a>
                                                 <a href="#" class="btn btn-danger btn-sm">hapus</a>
                                             </td>
                                         </tr>
@@ -321,6 +327,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -368,12 +375,12 @@
         </div>
     </div>
 
-    <!-- Modal Books -->
-    <div class="modal fade" id="tambahBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Student -->
+    <div class="modal fade" id="tambahSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Form Tambah Buku</h5>
+              <h5 class="modal-title">Form tambah siswa/i</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -381,170 +388,28 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label class="col-form-label">Judul Buku:</label>
-                  <input type="text" class="form-control" placeholder="Quantum Reading">
+                  <label class="col-form-label">NIS:</label>
+                  <input type="number" class="form-control" placeholder="1234567890">
                 </div>
                 <div class="form-group">
-                  <label class="col-form-label">Pengarang:</label>
+                  <label class="col-form-label">Nama Lengkap:</label>
                   <input type="text" class="form-control" placeholder="Contoh: Abu Jahal">
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label">Penerbit</label>
+                    <label class="col-form-label">Kelas</label>
                     <select class="form-control">
                         <option selected>Pilih</option>
-                        <option value="Erlangga">Erlangga</option>
-                        <option value="Pustaka Imam Syafi'i">Pustaka Imam Syafi'i</option>
+                        <option value="XII IPA 2">XII IPA 2</option>
+                        <option value="XII IPA 3">XII IPA 3</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label">Deskripsi</label>
-                    <textarea cols="30" rows="3" class="form-control">Jadi ini adalah buku karya Lerian Febriana, aseek!</textarea>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Kategori</label>
-                    <select class="form-control">
-                        <option selected>Pilih</option>
-                        <option value="Self Improvement">Self Improvement</option>
-                        <option value="English">English</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Stok:</label>
-                  <input type="number" class="form-control" placeholder="Contoh: 2">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Harga:</label>
-                  <input type="text" class="form-control" placeholder="Contoh: Rp32.000">
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-              <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    
-    <!-- Modal Edit Books -->
-    <div class="modal fade" id="editBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Form Edit Buku 0001</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label class="col-form-label">Judul Buku:</label>
-                  <input type="text" class="form-control" value="Quantum Reading">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Pengarang:</label>
-                  <input type="text" class="form-control" value="Abu Jahal">
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Penerbit</label>
-                    <select class="form-control">
-                        <option value="Kaifa Learning" selected>Kaifa Learning</option>
-                        <option value="Erlangga">Erlangga</option>
-                        <option value="Pustaka Imam Syafi'i">Pustaka Imam Syafi'i</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Deskripsi</label>
-                    <textarea cols="30" rows="3" class="form-control">Jadi ini adalah buku karya Lerian Febriana, aseek!</textarea>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Kategori</label>
-                    <select class="form-control">
-                        <option value="Self Improvement"selected>Self Improvement</option>
-                        <option value="English">English</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Stok:</label>
-                  <input type="number" class="form-control" value="3">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Lokasi Buku:</label>
-                  <input type="text" class="form-control" value="R01B3">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Harga:</label>
-                  <input type="text" class="form-control" value="Rp32.000">
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-              <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <!-- Modal Detail Books -->
-    <div class="modal fade" id="detailBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Detail Buku 0001</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                  <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label class="col-form-label">Total Stok:</label>
-                        <input type="number" class="form-control" value="3">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="col-form-label">Jumlah Buku Dipinjam:</label>
-                        <input type="number" class="form-control" value="2">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label class="col-form-label">Sisa Stok:</label>
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-              <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <!-- Modal Penerbit -->
-    <div class="modal fade" id="tambahPenerbit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Form Tambah Penerbit</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label class="col-form-label">Nama Penerbit:</label>
-                  <input type="text" class="form-control" placeholder="Nama penerbit...">
+                  <label class="col-form-label">No HP:</label>
+                  <input type="number" class="form-control" placeholder="Contoh: +62812 2222 4444">
                 </div>
                 <div class="form-group">
                   <label class="col-form-label">Email:</label>
-                  <input type="text" class="form-control" placeholder="abujahal@jahannam.com">
-                <div class="form-group">
-                  <label class="col-form-label">No. Telp:</label>
-                  <input type="number" class="form-control" placeholder="Contoh: +62821-2222-3333">
+                  <input type="email" class="form-control" placeholder="Contoh: abujahal@jahannam.com">
                 </div>
               </form>
             </div>
@@ -554,8 +419,52 @@
             </div>
           </div>
         </div>
-    </div>
+      </div>
 
+    <!-- Modal Edit Student -->
+    <div class="modal fade" id="editSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Form Edit Siswa/i 1556484564</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label class="col-form-label">NIS:</label>
+                  <input type="number" class="form-control" value="1234567890">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Nama Lengkap:</label>
+                  <input type="text" class="form-control" value="Abu Jahal">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Kelas</label>
+                    <select class="form-control">
+                        <option value="XII IPA 2"selected>XII IPA 2</option>
+                        <option value="XII IPA 3">XII IPA 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">No HP:</label>
+                  <input type="number" class="form-control" value="081222224444">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Email:</label>
+                  <input type="email" class="form-control" value="abujahal@jahannam.com">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
