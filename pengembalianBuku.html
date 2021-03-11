@@ -323,7 +323,7 @@
                                             <td>Belum dikembalikan</td>
                                             <td>
                                                 <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-success btn-sm">kembali</a>
-                                                <a href="#" class="btn btn-danger btn-sm">Hilang</a>
+                                                <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hilangModal">Hilang</a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -335,7 +335,7 @@
                                             <td>Belum dikembalikan</td>
                                             <td>
                                                 <a href="#" data-toggle="modal" data-target="#detailPinjam" class="btn btn-success btn-sm">kembali</a>
-                                                <a href="#" class="btn btn-danger btn-sm">Hilang</a>
+                                                <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hilangModal">Hilang</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -368,6 +368,27 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
+    <!-- Hilang Modal -->
+    <div class="modal fade" id="hilangModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Bayar Denda Sekarang?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <p>Dikenakan denda sebesar <b>Rp50.000</b> karena melewati batas pengembalian buku selama 30 hari, yang seharusnya dikembalikan pada tanggal 12 Maret 2020.</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+            <button type="button" class="btn btn-danger">Ya</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

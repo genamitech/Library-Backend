@@ -383,7 +383,7 @@
 
     <!-- Modal Books -->
     <div class="modal fade" id="tambahBuku" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Form Tambah Buku</h5>
@@ -393,41 +393,54 @@
             </div>
             <div class="modal-body">
               <form>
-                <div class="form-group">
-                  <label class="col-form-label">Judul Buku:</label>
-                  <input type="text" class="form-control" placeholder="Quantum Reading">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Pengarang:</label>
-                  <input type="text" class="form-control" placeholder="Contoh: Abu Jahal">
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Penerbit</label>
-                    <select class="form-control">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Judul Buku:</label>
+                      <input type="text" class="form-control" value="Abu Jahal">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Pengarang:</label>
+                      <input type="text" class="form-control" value="Iman">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label>Penerbit:</label>
+                      <select class="form-control">
                         <option selected>Pilih</option>
                         <option value="Erlangga">Erlangga</option>
                         <option value="Pustaka Imam Syafi'i">Pustaka Imam Syafi'i</option>
-                    </select>
+                      </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-form-label">Deskripsi</label>
-                    <textarea cols="30" rows="3" class="form-control">Jadi ini adalah buku karya Lerian Febriana, aseek!</textarea>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label class="col-form-label">Kategori</label>
+                        <select class="form-control">
+                            <option selected>Pilih</option>
+                            <option value="Self Improvement">Self Improvement</option>
+                            <option value="English">English</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label class="col-form-label">Stok:</label>
+                        <input type="number" class="form-control" placeholder="Contoh: 2">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label class="col-form-label">Harga:</label>
+                        <input type="text" class="form-control" placeholder="Contoh: Rp32.000">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label class="col-form-label">Upload foto:</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                            <label class="custom-file-label" for="inputGroupFile01">default.png</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-form-label">Kategori</label>
-                    <select class="form-control">
-                        <option selected>Pilih</option>
-                        <option value="Self Improvement">Self Improvement</option>
-                        <option value="English">English</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Stok:</label>
-                  <input type="number" class="form-control" placeholder="Contoh: 2">
-                </div>
-                <div class="form-group">
-                  <label class="col-form-label">Harga:</label>
-                  <input type="text" class="form-control" placeholder="Contoh: Rp32.000">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label class="col-form-label">Deskripsi</label>
+                        <textarea cols="30" rows="3" class="form-control">Jadi ini adalah buku karya Lerian Febriana, aseek!</textarea>
+                    </div>
                 </div>
               </form>
             </div>
